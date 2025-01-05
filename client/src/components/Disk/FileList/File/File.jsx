@@ -22,7 +22,15 @@ function File({file}) {
 
   function downloadClickHandler(event) {
     event.stopPropagation();
-    downloadFile(file);
+    downloadFile(file._id, file.name);
+  }
+
+  function copyFileLinkHandler(event) {
+      event.stopPropagation();
+      const currentHost = window.location.origin;
+      const downloadLink = `${currentHost}/download/${file._id}`
+
+      alert(`Ссылка на файл: ${downloadLink}`)
   }
 
   function deleteClickHandler(event) {
@@ -38,6 +46,7 @@ function File({file}) {
         <div className='file_date'>{file.date.slice(0, 10)}</div>
         <div className='file_size'>{sizeFiles(file.size)}</div>
         { file.type !== 'dir' && <button onClick={(event) => downloadClickHandler(event)} className="file_btn file_download btn btn-outline-success">Скачать</button> }
+        { file.type !== 'dir' && <button onClick={(event) => copyFileLinkHandler(event)} className="file_btn file_link btn btn-outline-success">Ссылка</button> }
         <button onClick={(event) => deleteClickHandler(event)} className="file_btn file_delete btn btn-outline-danger">Удалить</button>
       </div>
     );

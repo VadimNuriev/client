@@ -45,8 +45,13 @@
   display: block;
 }
 
-.file:hover .file_delete {
+.file:hover .file_link {
   grid-column-start: 6;
+  margin-left: 5px;
+  display: block;
+}
+.file:hover .file_delete {
+  grid-column-start: 7;
   margin-left: 5px;
   display: block;
 }

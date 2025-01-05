@@ -92,9 +92,9 @@ export const uploadFile = (file, dirId) => {
   }
 }
 
-export async function downloadFile(file) {
+export async function downloadFile(fileId, fileName) {
 
-  const response = await fetch(`${API_URL}api/files/download?id=${file._id}`, {
+  const response = await fetch(`${API_URL}api/files/download?id=${fileId}`, {
     headers: {Authorization: `Bearer ${localStorage.getItem('token')}`},
   })
 
@@ -103,7 +103,7 @@ export async function downloadFile(file) {
     const downloadUrl = window.URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = downloadUrl
-    link.download = file.name
+    link.download = fileName ?? fileId
     document.body.appendChild(link)
     link.click();
     link.remove();
