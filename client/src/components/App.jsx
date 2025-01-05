@@ -11,6 +11,7 @@ import Profile from './Profile/Profile';
 import Plug from './Plug/Plug';
 import Footer from './Footer/Footer';
 import Tetris from './Tetris/Tetris';
+import Download from './Download/Download';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Disk />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/download" element={<Download />} />
             </Routes>
           }
         </div>
