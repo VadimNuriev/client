@@ -5,7 +5,7 @@ function Footer(props) {
   return (
     <div className="footer">
       <p className="cp-text">
-          © Нуриев Вадим студент группы ИНО-ЗБ ПОАС 22-2.
+          ©Вадим.
       </p>
     </div>
   );
